@@ -1,7 +1,7 @@
 import React from 'react';
 import Purchase from '../Purchase/Purchase'
 
-const History = ({purchases}) => {
+const History = ({purchases, deleteitem}) => {
     let purchase = purchases.map(purchase => {
         return <Purchase 
               id = {purchase.id}

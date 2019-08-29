@@ -23,7 +23,7 @@ class App extends Component {
     this.setState({...this.state.purchases, newPurchase});
   }
 
-  deleteItem = (id) => {
+  deleteitem = (id) => {
     const filteredItems = this.state.purchases.filter(item => item.id !==id);
     this.setState({purchases: filteredItems})
   }
@@ -38,7 +38,7 @@ class App extends Component {
           </div>
         </header>
         <div className='purchase-container'>
-          <History purchases={this.state.purchases} />
+          <History purchases={this.state.purchases} deleteitem={this.deleteitem}/>
         </div>
       </div>
     );
