@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import History from '../History/History';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
   componentDidMount = () => {
     fetch('http://localhost:3001/api/v1/purchases')
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => this.setState({purchases: data}))
+      .then(data => console.log(this.state.purchases))
       .catch(error => console.error(error));
 
   }
@@ -27,7 +29,7 @@ class App extends Component {
           </div>
         </header>
         <div className='purchase-container'>
-
+          <History purchases={this.state.purchases} />
         </div>
       </div>
     );
