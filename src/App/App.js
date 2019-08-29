@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      purchases: []
+    }
+  }
+
+  componentDidMount = () => {
+    fetch('http://localhost:3001/api/v1/purchases')
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error(error));
+
+  }
+
   render() {
     return (
       <div className="App">
