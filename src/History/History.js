@@ -10,6 +10,7 @@ const History = ({purchases, deleteitem}) => {
               description = {purchase.description}
               price = {purchase.price}
               key = {purchase.id}
+              deleteitem={deleteitem}
             />
     });
 

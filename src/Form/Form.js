@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import App from '../App/App'
 
 export default class Form extends Component {
     constructor() {
@@ -23,9 +22,11 @@ export default class Form extends Component {
             key: this.props.purchases.length,
             ...this.state
         }
-        this.props.addPurchase(newPurchase);
-
         console.log(this.props.purchases)
+        this.props.addPurchase(newPurchase);
+        console.log(newPurchase);
+
+        
     } 
 
     render() {

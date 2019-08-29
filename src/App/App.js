@@ -20,7 +20,7 @@ class App extends Component {
   }
   
   addPurchase = (newPurchase) => {
-    this.setState({...this.state.purchases, newPurchase});
+    this.setState({purchases: [...this.state.purchases, newPurchase]});
   }
 
   deleteitem = (id) => {
