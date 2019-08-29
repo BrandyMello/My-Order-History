@@ -8,7 +8,7 @@ const Purchase = ({id, name, description, price, img}) => {
             <p>{description}</p>
             <p>{price}</p>
             <img src={img} alt={name} className='card-image' />
-            <button className='remove-btn'>remove from History</button>    
+            <button className='remove-btn' >remove from History</button>    
         </article>
     )
 }

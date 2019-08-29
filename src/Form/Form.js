@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import App from '../App/App'
+// import App from '../App/App'
 
 export default class Form extends Component {
     constructor() {
@@ -12,11 +12,26 @@ export default class Form extends Component {
         }
     }
 
-    render() {
+    handleEventInputs = (e) => {
+        this.setState({[e.target.name]: [e.target.value]})
+    }
+
+    submitPurchase = (e) => {
+        e.preventDefault();
+        const newPurchase = {
+            id: this.props.purchases.length,
+            key: this.props.purchases.length,
+            ...this.state
+        }
+        this.props.addPurchase(newPurchase);
+
         console.log(this.props.purchases)
+    } 
+
+    render() {
         return (
             <form className='form'>
-               <input 
+               <input onChange={e => this.handleEventInputs(e)}
                 type='text' 
                 className='image-url-input input' 
                 name='img'
@@ -24,7 +39,7 @@ export default class Form extends Component {
                 value={this.state.img}
               >
               </input>
-              <input 
+              <input onChange={e => this.handleEventInputs(e)}
                 type='text' 
                 className='name-input input' 
                 name='name'
@@ -32,7 +47,7 @@ export default class Form extends Component {
                 value={this.state.name}
               >
               </input>
-              <input 
+              <input onChange={e => this.handleEventInputs(e)}
                 type='text' 
                 className='description-input input' 
                 name='description'
@@ -40,7 +55,7 @@ export default class Form extends Component {
                 value={this.state.description}
               >
               </input>
-              <input 
+              <input onChange={e => this.handleEventInputs(e)}
                 type='text' 
                 className='price-input input' 
                 name='price'
@@ -48,7 +63,7 @@ export default class Form extends Component {
                 value={this.state.price}
               >
               </input>
-              <button className='purchase-btn'>Add Purchase</button> 
+              <button className='purchase-btn' onClick={e => this.submitPurchase(e)} >Add Purchase</button> 
             </form>
         )
     }

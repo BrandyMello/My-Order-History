@@ -15,9 +15,17 @@ class App extends Component {
     fetch('http://localhost:3001/api/v1/purchases')
       .then(response => response.json())
       .then(data => this.setState({purchases: data}))
-      .then(data => console.log(this.state.purchases))
       .catch(error => console.error(error));
 
+  }
+  
+  addPurchase = (newPurchase) => {
+    this.setState({...this.state.purchases, newPurchase});
+  }
+
+  deleteItem = (id) => {
+    const filteredItems = this.state.purchases.filter(item => item.id !==id);
+    this.setState({purchases: filteredItems})
   }
 
   render() {
@@ -26,7 +34,7 @@ class App extends Component {
         <header>
           <h1 className='app-title'>My Order History</h1>
           <div className='purchase-form'>
-          <Form purchases={this.state.purchases} />
+          <Form purchases={this.state.purchases} addPurchase={this.addPurchase} />
           </div>
         </header>
         <div className='purchase-container'>
