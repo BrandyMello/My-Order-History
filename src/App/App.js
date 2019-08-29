@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import History from '../History/History';
+import Form from '../Form/Form'
 import './App.css';
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
         <header>
           <h1 className='app-title'>My Order History</h1>
           <div className='purchase-form'>
-
+          <Form purchases={this.state.purchases} />
           </div>
         </header>
         <div className='purchase-container'>
