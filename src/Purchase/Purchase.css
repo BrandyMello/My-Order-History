@@ -2,6 +2,15 @@
     border: 2px solid black;
     margin: 20px;
     padding: 10px;
-    height: 90px;
+    height: 200px;
     width: 80%;
+}
+
+.card-image {
+    height: 100px;
+}
+
+button {
+    background: red;
+    color: white;
 }

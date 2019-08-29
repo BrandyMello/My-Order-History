@@ -5,7 +5,7 @@ const History = ({purchases}) => {
     let purchase = purchases.map(purchase => {
         return <Purchase 
               id = {purchase.id}
-              img = {purchase.image}
+              img = {purchase.img}
               name = {purchase.name}
               description = {purchase.description}
               price = {purchase.price}

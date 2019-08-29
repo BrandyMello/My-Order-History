@@ -7,7 +7,7 @@ const Purchase = ({id, name, description, price, img}) => {
             <h3>{name}</h3>
             <p>{description}</p>
             <p>{price}</p>
-            <img src={img} alt={name} />
+            <img src={img} alt={name} className='card-image' />
             <button>remove from History</button>    
         </article>
     )
